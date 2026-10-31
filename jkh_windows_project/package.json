@@ -1,0 +1,23 @@
+{
+  "name": "jkh-charity",
+  "version": "33.0.0",
+  "description": "جمعية الخير للجميع - نسخة سطح المكتب",
+  "author": "جمعية الخير للجميع",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "org.jkhair.cases.desktop",
+    "productName": "JKH Charity",
+    "files": ["main.js", "web/**/*"],
+    "icon": "web/icon-512.png",
+    "win": { "target": ["nsis", "portable"], "artifactName": "JKH-Charity-${version}-${target}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "perMachine": false, "language": "1025" }
+  }
+}
